@@ -9,14 +9,7 @@ var fullAge = true;
 console.log(fullAge)
 
 //Undefined
-var job;
-console.log(job);
-
-job = "Teacher";
-console.log(job);
-*/
-
-/*====== Variabale mutations and type coercion=========*/
+var job; console.log(job); job = "Teacher"; console.log(job); */ /*====== Variabale mutations and type coercion=========*/
 /*
 var firstName = "John";
 var age = 28;
@@ -147,5 +140,149 @@ switch(job){
 	if(height == "23"){
 		console.log("the == operator does type coercion!");
 	}
+*/
+
+/******************************************
+* Function
+*
+function calculateAge(birthYear){
+	return 2018 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1948);
+var ageJane = calculateAge(1969);
+
+console.log(ageJohn, ageMike, ageJane);
+
+function yearsUntilRetirement(year, firstName) {
+	var age = calculateAge(year);
+	var retirement = 65 - age;
+	console.log(firstName + " retires in " + retirement + " years");
+}
+
+
+yearsUntilRetirement(1990, "john");
 
 */
+/*****************************************
+ *
+ * Function statments and Expressions
+
+
+//Function declaration
+//function whatDoYouDo(job, firstName){}
+
+
+// Function Expression
+var whatDoYouDo = function(job, firstName){
+	switch(job){
+		case "teacher":
+			return firstName + " teaches kids how to code";
+		case "driver":
+			return firstName + " drives uber";
+		case "designer":
+			return firstName + " designs a website";
+		default:
+			return firstName + " does something else";
+	}
+
+}
+
+console.log(whatDoYouDo("teacher", "john"));
+*/
+
+/****************************
+ * Arrays
+ *
+
+var names = ["john", "mark", "jane"];
+var years = new Array(1990, 1969, 1948);
+console.log(names[2]);
+console.log(names.length);
+
+// Mutate array data
+names[1] = "Ben";
+names[names.length] = "mary";
+
+
+// Different Data types
+var john = ["john", "smith", 1990, "teacher"];
+
+//add to the end
+john.push("blue);
+//Add to the beg
+john.unshift("Mr.");
+console.log(John);
+
+
+john.pop();
+john.pop();
+john.shift();
+
+
+console.log(john);
+
+console.log(john.indexOf(1990));
+
+var isDesigner = john.indexOf("designer)) === -1 ? "john isnt a Designer" : "john is a designer";
+	console.log(isDesigner);
+
+*/
+
+
+/***************************************
+ * Object and properties
+ *
+// Object literal
+var john = {
+		firstName: "John",
+		lastName: "Smith",
+		brithYear: "1990",
+		family: ["Jane", "Mark", "Bob", "Emily"],
+		job: "teacher",
+		isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john["lastName"]); var x = "birthYear";
+console.log(john[x]);
+
+john.job = "designer";
+john["isMarried"] = true;
+
+console.log(john);
+
+
+// New object syntax
+var jane = new Object();
+jane.name = "jane";
+
+jane.birthYear = 1969;
+jane.firstName = "Jane";
+jane["lastName"] = "Smith";
+console.log(jane);
+*/
+
+/****************************8
+ * Objects and methods
+ */
+var john = {
+		firstName: "John",
+		lastName: "Smith",
+		brithYear: "1990",
+		family: ["Jane", "Mark", "Bob", "Emily"],
+		job: "teacher",
+		isMarried: false,
+		calcAge: function(){
+			this.age = 2018 - this.birthYear;
+		}
+};
+
+john.calcAge();
+console.log(john);
+
+
+
+
+
